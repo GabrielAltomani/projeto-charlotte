@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Inter:wght@400;800&display=swap');
+
+body {
+  font-family: Inter;
+}
+
+.button-back {
+  margin: 5px;
+}
+
+.voltar {
+  position: absolute; 
+  top: 18px;
+  bottom: 15px;
+  left: 15px;
+  z-index: 1;
+}
+
+.center {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  
+}
+
+.center h1 {
+  text-align: left;
+  font-size: 32px;
+  font-weight: 700;
+  padding-bottom: 2px;
+}
+
+.center h3 {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 150px;
+}
+
+.center form {
+  box-sizing: border-box;
+}
+
+form .txt_field {
+  position: relative;
+  border-bottom: 2px solid #000;
+  margin: 69px 0;
+}
+
+.txt_field input {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.txt_field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #000;
+  transform: translateY(-50%);
+  font-size: 20px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.txt_field span::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: .5s;
+}
+
+.txt_field input:focus ~ label {
+  top: 1px;
+  color: #b8b8b8;
+} 
+
+.txt_field input:focus ~ span::before {
+  width: 100%;
+}
+
+.pass {
+  color: #6B6B6B;
+  cursor: pointer;
+  text-align: center;
+}
+
+.pass:hover {
+  text-decoration: underline;
+}
+
+.sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="submit"] {
+  width: 230px;
+  height: 50px;
+  border-radius: 36px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  background: var(--bt-color-1, #000);
+  margin-top: 95px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="submit"] {
+  border-color: #000;
+  transition: .5s;
+}
+
+.signup-link {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  color: #6B6B6B;
+}
+
+.signup-link a {
+  color: #6B6B6B;
+  text-decoration: none;
+}
