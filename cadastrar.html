@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Login</title>
+    <title>Cadastrar</title>
 
     <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/cadastrar.css" />
   </head>
   <body>
     <header>
@@ -18,27 +18,28 @@
     </header>
 
     <div class="center">
-      <h1>Bem vindo!</h1>
-      <h3>Entre com seu nome e sua senha</h3>
+      <h2>Crie</h2>
+      <h2>Sua conta :)</h2>
       <form action="">
+        <div class="txt_field">
+          <input type="email" />
+          <span></span>
+          <label>Digite seu email</label>
+        </div>
         <div class="txt_field">
           <input type="text" />
           <span></span>
-          <label>Nome de usuário</label>
+          <label>Digite seu nome de usuário</label>
         </div>
         <div class="txt_field">
           <div class="senha">
             <input type="password" />
             <span></span>
-            <label class="senha">Senha</label>
+            <label class="senha">Digite sua senha</label>
           </div>
         </div>
         <div class="sub">
-          <input type="submit" value="login" />
-        </div>
-        <div class="pass">Esqueceu sua senha?</div>
-        <div class="signup-link">
-          <a href="cadastrar.html">Ou crie uma nova conta</a>
+          <input type="submit" value="criar" />
         </div>
       </form>
     </div>
