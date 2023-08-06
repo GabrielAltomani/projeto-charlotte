@@ -113,7 +113,7 @@ input[type="submit"] {
   outline: none;
 }
 
-input[type="submit"] {
-  border-color: #000;
+input[type="submit"]:hover {
+  border-color: #000 5px;
   transition: 0.5s;
 }
