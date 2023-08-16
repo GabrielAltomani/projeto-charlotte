@@ -4,16 +4,13 @@ body {
   font-family: Inter;
 }
 
-.button-back {
-  margin: 5px;
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }
 
-.voltar {
-  position: absolute;
-  top: 18px;
-  bottom: 15px;
-  left: 15px;
-  z-index: 1;
+.button-back {
+  margin: 10px;
 }
 
 .center {
