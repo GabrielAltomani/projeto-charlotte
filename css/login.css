@@ -2,6 +2,9 @@
 
 body {
   font-family: Inter;
+  background-image: url(images/background-login.png);
+  background-repeat: no-repeat;
+  background-position-y: 300px;
 }
 
 .fade-out {
@@ -48,7 +51,7 @@ form .txt_field {
 .txt_field input {
   width: 100%;
   height: 50px;
-  font-size: 20px;
+  font-size: 18px;
   border: none;
   background: none;
   outline: none;
@@ -57,10 +60,11 @@ form .txt_field {
 .txt_field label {
   position: absolute;
   top: 50%;
-  left: 5px;
+  left: 10px;
   color: #000;
   transform: translateY(-50%);
-  font-size: 20px;
+  font-size: 26px;
+  font-weight: 400;
   pointer-events: none;
   transition: 0.5s;
 }
@@ -68,17 +72,20 @@ form .txt_field {
 .txt_field span::before {
   content: "";
   position: absolute;
-  top: 40px;
-  left: 0;
+  top: 50%;
+  right: 0;
   width: 100%;
+  transform: translateY(-50%);
   height: 2px;
-  background: #fff;
-  transition: 0.5s;
+  background: none;
+  transition: all 0.2s ease;
 }
 
-.txt_field input:focus ~ label {
-  top: 1px;
-  color: #b8b8b8;
+.txt_field input:focus~label,
+.txt_field input:valid~label {
+  top: -5px;
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 18px;
 }
 
 .txt_field input:focus ~ span::before {
