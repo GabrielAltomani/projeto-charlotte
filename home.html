@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <!-- Definição do conjunto de caracteres -->
     <meta charset="UTF-8" />
+    <!-- Garante a renderização no modo de compatibilidade com o Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Define a escala inicial e a largura da viewport para dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Título da página exibido na aba do navegador -->
     <title>Home</title>
 
+    <!-- Inclusão de estilos -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/home.css" />
   </head>
   <body>
+    <!-- Container do quadro de líderes -->
     <div class="leaderboard">
       <h1>Ranking Geral</h1>
       <ol>
+        <!-- Item de líder 1 -->
         <li>
           <span class="rank-number"></span>
           <mark>Jerry Wood</mark>
           <small>315</small>
         </li>
+        <!-- Item de líder 2 -->
         <li>
           <span class="rank-number"></span>
           <mark>Brandon Barnes</mark>
           <small>301</small>
         </li>
+        <!-- Item de líder 3 -->
         <li>
           <span class="rank-number"></span>
           <mark>Raymond Knight</mark>
           <small>292</small>
         </li>
+        <!-- Item de líder 4 -->
         <li>
           <span class="rank-number"></span>
           <mark>Trevor McCormick</mark>
           <small>245</small>
         </li>
+        <!-- Item de líder 5 -->
         <li>
           <span class="rank-number"></span>
           <mark>Andrew Fox</mark>
@@ -41,13 +52,36 @@
         </li>
       </ol>
     </div>
+    <!-- Rodapé da página -->
     <footer>
       <div class="actions">
-        <button type="button" class="descarte" id="descarte">Realizar Descarte</button>
-        <a href="editar.html"><button type="button" class="editar">Editar Perfil</button></a>
+        <!-- Botão para realizar descarte -->
+        <button type="button" class="descarte" id="descarte">
+          Realizar Descarte
+        </button>
+        <!-- Overlay para alertas -->
+        <div id="alertOverlay" class="overlay">
+          <!-- Caixa de alerta -->
+          <div id="alertBox" class="alert-box">
+            <h2 class="alert-title">Atenção</h2>
+            <p class="alert-message">
+              Começou a contagem para você realizar o descarte. Se quiser
+              cancelar, clique novamente no botão.
+            </p>
+            <!-- Botão para cancelar o alerta -->
+            <button id="cancelButton" class="alert-button">Cancelar</button>
+            <!-- Botão para confirmar o alerta -->
+            <button id="confirmButton" class="alert-button">Entendi</button>
+          </div>
+        </div>
+        <!-- Link para a página de edição de perfil -->
+        <a href="editar.html"
+          ><button type="button" class="editar">Editar Perfil</button></a
+        >
       </div>
     </footer>
 
+    <!-- Inclusão de scripts -->
     <script src="js/number-rank.js"></script>
     <script src="js/descarte.js"></script>
   </body>
