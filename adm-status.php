@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Status lixeira</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/adm-status.css" />
+  </head>
+  <body>
+    <div class="leaderboard">
+      <h1>Status lixeira</h1>
+      <ol>
+        <?php
+          // Incluindo o arquivo de conexão para estabelecer conexão com o banco de dados
+          require_once "db_connection.php";
+
+          try {
+            // Consulta SQL para selecionar os dados da tabela
+            $sql = "SELECT ID_LIXEIRA, QUANTIDADE, CHEIO, DATA_CHEIO 
+            FROM TB_LIXEIRA
+            ORDER BY ID_LIXEIRA DESC";
+
+            // Executa a consulta usando o objeto $pdo
+            $result = $pdo->query($sql);
+
+            // Verifica se há resultados
+            if ($result->rowCount() > 0) {
+              // Loop através dos resultados e exibe-os
+              while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+              echo "<ul>";
+              echo "<li>ID: " . $row["ID_LIXEIRA"] . "</li>";
+              echo "<li>Quantidade: " . $row["QUANTIDADE"] . "</li>";
+              echo "<li>Cheio: " . ($row["CHEIO"] ? "Sim" : "Não") . "</li>";
+
+              // Formata a data para o padrão brasileiro
+              $dataFormatada = date("d/m/Y    H:i:s", strtotime($row["DATA_CHEIO"]));
+              echo "<li>Data: " . $dataFormatada . "</li>";
+
+              echo "</ul>";
+
+              // Adicione uma linha horizontal entre os conjuntos de dados se necessário
+              echo "<hr>";
+            }
+            } else {
+              echo "Nenhum resultado encontrado.";
+            }
+          } catch (PDOException $e) {
+           echo "Erro na consulta: " . $e->getMessage();
+          }
+        ?>
+      </ol>
+    </div>
+    <footer>
+      <div class="actions">
+        <a href="adm-ranking.php"><button type="button" class="ranking">Ranking</button></a>
+      </div>
+    </footer>
+  </body>
+</html>

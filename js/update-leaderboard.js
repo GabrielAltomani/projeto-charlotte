@@ -12,4 +12,4 @@ function updateLeaderboard() {
 }
 
 // Chama a função de atualização a cada 5 segundos
-setInterval(updateLeaderboard, 5000); // 5000 milissegundos = 5 segundos
+setInterval(updateLeaderboard, 5000); 
