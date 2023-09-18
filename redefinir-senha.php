@@ -22,21 +22,14 @@
     <div class="center">
       <h1>Redefinir</h1>
       <h1>Senha</h1>
-      <form action="">
+      <form action="envio.php" method="post">
         <div class="txt_field">
           <input type="text" required />
-          <label>Digite seu email</label>
+          <label>Digite sua senha</label>
           <span></span>
         </div>
-        <div class="txt_field">
-          <div class="senha">
-            <input type="password" required />
-            <label class="senha">Digite sua nova senha</label>
-            <span></span>
-          </div>
-        </div>
         <div class="sub">
-          <input type="submit" value="enviar" />
+          <input type="submit" value="enviar" name="enviar"/>
         </div>
       </form>
     </div>
