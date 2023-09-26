@@ -14,3 +14,10 @@ function animatePageBack() {
         window.history.back();
     }, 100); // Aguarda 500ms antes de voltar à página anterior
 }
+
+setTimeout(function() {
+    var mensagemSucesso = document.querySelector('.alert-success');
+    if (mensagemSucesso) {
+        mensagemSucesso.style.display = 'none';
+    }
+}, 5000); // 5000 milissegundos (5 segundos)

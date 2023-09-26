@@ -11,6 +11,19 @@
     <link rel="stylesheet" href="css/login-responsive.css" />
   </head>
   <body>
+    
+    <?php
+      session_start();
+      
+      // Verifique se a variável de sessão de mensagem de sucesso está definida
+      if (isset($_SESSION['mensagemSucesso'])) {
+          echo '<div class="alert alert-success">' . $_SESSION['mensagemSucesso'] . '</div>';
+          
+          // Após exibir a mensagem, você pode removê-la para que ela não apareça novamente
+          unset($_SESSION['mensagemSucesso']);
+      }
+    ?>
+
     <header>
       <div class="button-back">
         <a id="botaoVoltar" href="#">
