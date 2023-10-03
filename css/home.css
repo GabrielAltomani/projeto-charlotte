@@ -33,29 +33,91 @@ h1 {
   margin: 20px 0; /* Margem superior e inferior */
 }
 
-.rank-number {
-  font-weight: bold;
-  color: #FFD700;
-  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
-  background-image: url();
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
 /* Estilo para a lista ordenada */
 ol {
+  display: inline-block;
   list-style-type: none; /* Remove os marcadores padrão da lista */
   counter-reset: li; /* Reinicia o contador automático */
   padding: 0;
   margin: 0;
+  width: 100%;
+}
+
+
+
+.linha-rank {
+  list-style-type: none;  
+  display: flex;
+}
+
+.rank-number-li {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/number-background.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+
+.rank-number-li-1-lugar {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/1_lugar.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.rank-number-li-2-lugar {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/2_lugar.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.rank-number-li-3-lugar {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/3_lugar.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+
+.rank-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* Estilo para cada item do ranking */
 li {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
   padding: 10px;
   margin-top: 20px;
   background: none;
@@ -77,6 +139,7 @@ li mark {
   font-weight: bold;
   color: #333;
   background: none;
+  margin-left: 20px;
 }
 
 /* Estilo para o valor da pontuação */
@@ -199,4 +262,8 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.ranking-change {
+  animation: 4s ease-in-out;
 }

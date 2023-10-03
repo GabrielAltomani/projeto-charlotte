@@ -31,17 +31,34 @@
                 // Verificando se a consulta foi bem-sucedida
                 if ($result) {
                     $rank = 1; // Variável para controlar o número de classificação
-                    // Loop para percorrer cada linha de resultado
-                    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                    $counter = 0;
+                    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {       // Loop para percorrer cada linha de resultado
+                        $counter++; 
                         $nome = $row["NOME_USUARIO"]; // Obtendo o nome do usuário da linha atual
                         $pontuacao = $row["PONTUACAO"]; // Obtendo a pontuação do usuário da linha atual
 
+                        $extraClass = '';
+                        if ($counter == 1) {
+                            $extraClass = '-1-lugar';
+                        } if ($counter == 2) {
+                            $extraClass = '-2-lugar';
+                        } if ($counter == 3) {
+                            $extraClass = '-3-lugar';
+                        }
+
                         // Exibindo as informações do líder formatadas em HTML
-                        echo "<li>
-                                <span class='rank-number'>$rank</span>
-                                <mark>$nome</mark>
-                                <small>$pontuacao</small>
-                            </li>";
+                        echo "
+                            <ul class='linha-rank'>
+                                <li class='rank-number-li$extraClass'>
+                                    <span class='rank-number'>$rank</span>
+                                </li>
+                                <li class='rank-content'>
+                                    <mark>$nome</mark>
+                                    <small>$pontuacao</small>
+                                </li>
+                            </ul>
+                        ";
+                
 
                         $rank++; // Incrementando o número de classificação
                     }
