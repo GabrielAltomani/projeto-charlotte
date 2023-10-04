@@ -66,9 +66,6 @@
                     // Exibindo uma mensagem de erro caso a consulta não tenha sido bem-sucedida
                     echo "Erro na consulta: " . $pdo->errorInfo()[2];
                 }
-
-                // Fechando a conexão com o banco de dados
-                $pdo = null;
             ?>
         </ol>
     </div>
@@ -94,11 +91,52 @@
                 </div>
             </div>
             <!-- Link para a página de edição de perfil -->
-            <a href="editar.html">
+            <a href="editar.php">
                 <button type="button" class="editar">Editar Perfil</button>
             </a>
         </div>
     </footer>
+
+    <?php 
+        require_once "db_connection.php";
+
+        // Verifique se o id foi passado via GET
+        if(isset($_GET["id"])) {
+            // Obtém o id da URL de forma segura
+            $id = filter_var($_GET["id"], FILTER_SANITIZE_NUMBER_INT);
+        
+            // Prepara a consulta SQL usando um Prepared Statement
+            $stmt = $pdo->prepare("SELECT nome_usuario, email_usuario, senha FROM tb_usuario WHERE id_usuario = :id");
+        
+            // Atribui o valor ao parâmetro na consulta
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        
+            // Executa a consulta
+            $stmt->execute();
+        
+            // Verifica se encontrou algum resultado
+            if($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $nome = $linha["nome_usuario"];
+                $email = $linha["email_usuario"];
+                $senha = $linha["senha"];
+        
+                // Inicia a sessão
+                session_start();
+        
+                // Define as variáveis de sessão
+                $_SESSION["id"] = $id;
+                $_SESSION["nome"] = $nome;
+                $_SESSION["email"] = $email;
+                $_SESSION["senha"] = $senha;
+            } else {
+                // Usuário não encontrado, redirecione ou mostre uma mensagem de erro
+            }
+        } else {
+            // id não especificado na URL, redirecione ou mostre uma mensagem de erro
+        }
+        
+    ?>
+
     <script src="js/number-rank.js"></script>
     <script src="js/descarte.js"></script>
     <script src="js/update-leaderboard.js"></script>

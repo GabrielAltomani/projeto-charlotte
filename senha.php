@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nova_senha']) && isse
 
             if ($stmt->execute()) {
                 $_SESSION['mensagemSucesso'] = "Senha redefinida com sucesso!";
-                header("Location: login.php");
+                header("Location: login.html");
                 exit; // Encerre o script após redirecionar
             } else {
                 $_SESSION['mensagemErro'] = "Erro ao redefinir a senha.";

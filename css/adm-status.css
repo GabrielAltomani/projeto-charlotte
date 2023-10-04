@@ -11,7 +11,7 @@ body {
 /* Ajuste para as dimensões específicas do ranking */
 .leaderboard {
   width: 85%;
-  height: 400px;
+  height: 615px;
   margin: 0 auto;
   /* Centraliza o ranking horizontalmente na página */
   overflow-y: auto;
@@ -59,7 +59,7 @@ li {
 
 
 li:hover {
-  background-color: #6daa80; /* Cor de fundo alterada ao passar o mouse */
+  background-color: #f36b59; /* Cor de fundo alterada ao passar o mouse */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra aumentada ao passar o mouse */
 }
 

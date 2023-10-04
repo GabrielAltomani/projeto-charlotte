@@ -41,9 +41,6 @@
               echo "<li>Data: " . $dataFormatada . "</li>";
 
               echo "</ul>";
-
-              // Adicione uma linha horizontal entre os conjuntos de dados se necessário
-              echo "<hr>";
             }
             } else {
               echo "Nenhum resultado encontrado.";

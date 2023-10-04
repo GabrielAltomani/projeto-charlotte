@@ -33,20 +33,91 @@ h1 {
   text-align: center;
   margin: 20px 0;
 }
-x
+
 /* Estilo para a lista ordenada */
 ol {
-    list-style-type: none; /* Remove os marcadores padrão da lista */
-    counter-reset: li; /* Reinicia o contador automático */
-    padding: 0;
-    margin: 0;
+  display: inline-block;
+  list-style-type: none; /* Remove os marcadores padrão da lista */
+  counter-reset: li; /* Reinicia o contador automático */
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+
+.linha-rank {
+  list-style-type: none;  
+  display: flex;
+}
+
+.rank-number-li {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/number-background.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+
+.rank-number-li-1-lugar {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/1_lugar.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.rank-number-li-2-lugar {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/2_lugar.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.rank-number-li-3-lugar {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/3_lugar.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+
+.rank-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* Estilo para cada item do ranking */
 li {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
   padding: 10px;
   margin-top: 20px;
   background: none;
@@ -54,13 +125,13 @@ li {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave de cores e sombras */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transições suaves */
 }
 
-
+/* Efeito ao passar o mouse sobre um item */
 li:hover {
-  background-color: #6daa80; /* Cor de fundo alterada ao passar o mouse */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra aumentada ao passar o mouse */
+  background-color: #6daa80; /* Cor de fundo ao passar o mouse */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra aumentada */
 }
 
 /* Estilo para o nome do participante (marcado com <mark>) */
