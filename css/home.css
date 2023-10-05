@@ -1,0 +1,269 @@
+/* Importação de fontes do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inder&family=Inter:wght@400;800&display=swap");
+
+/* Estilos gerais para o corpo da página */
+body {
+  font-family: Inter; /* Fonte padrão para o corpo do texto */
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2; /* Cor de fundo da página */
+}
+
+/* Estilo para o quadro de líderes */
+.leaderboard {
+  width: 85%;
+  height: 615px;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical se necessário */
+  padding: 0 20px;
+  /* Estilos de fundo e borda */
+  background-color: #82c294;
+  border-radius: 50px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* Estilo para o título do ranking */
+h1 {
+  color: var(--tx-color-2, rgba(0, 0, 0, 0.54)); /* Cor do título */
+  font-size: 24px;
+  font-family: Inter;
+  font-weight: 800;
+  text-align: center;
+  margin: 20px 0; /* Margem superior e inferior */
+}
+
+
+/* Estilo para a lista ordenada */
+ol {
+  display: inline-block;
+  list-style-type: none; /* Remove os marcadores padrão da lista */
+  counter-reset: li; /* Reinicia o contador automático */
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+
+
+.linha-rank {
+  list-style-type: none;  
+  display: flex;
+}
+
+.rank-number-li {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/number-background.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+
+.rank-number-li-1-lugar {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/1_lugar.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.rank-number-li-2-lugar {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/2_lugar.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+.rank-number-li-3-lugar {
+  width: 20px;
+  padding: 12px 13px 13px 12px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.45);;
+  background-color: #fff;
+  display: inline-block; /* Para que a largura do elemento se ajuste ao conteúdo */
+  background-image: url(images/3_lugar.png);
+  background-position: center;
+  background-size: 25px;
+  background-repeat: no-repeat;
+}
+
+.rank-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Estilo para cada item do ranking */
+li {
+  padding: 10px;
+  margin-top: 20px;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transições suaves */
+}
+
+/* Efeito ao passar o mouse sobre um item */
+li:hover {
+  background-color: #6daa80; /* Cor de fundo ao passar o mouse */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra aumentada */
+}
+
+/* Estilo para o nome do participante */
+li mark {
+  font-weight: bold;
+  color: #333;
+  background: none;
+  margin-left: 20px;
+}
+
+/* Estilo para o valor da pontuação */
+li small {
+  font-weight: bold;
+  color: #333;
+  background: none;
+}
+
+/* Estilos para o rodapé */
+footer {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Estilos para os botões no rodapé */
+.actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+button {
+  height: 62px;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.48px;
+  border: none;
+}
+
+/* Estilo para o botão "Realizar Descarte" */
+.descarte {
+  background-color: #82c294;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* Estilo para o botão "Realizar Descarte" quando clicado */
+.descarte.clicked {
+  background-color: #ff9688;
+}
+
+/* Estilo para o botão "Editar Perfil" */
+.editar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #d9d9d9;
+}
+
+/* Estilos para dispositivos móveis usando media queries */
+@media screen and (max-width: 600px) {
+  /* Ajuste do tamanho da fonte para dispositivos móveis */
+  h1 {
+    font-size: 20px;
+  }
+
+  li mark {
+    font-size: 18px;
+  }
+
+  li small {
+    font-size: 14px;
+  }
+
+  /* Largura total para o quadro de líderes */
+  .leaderboard {
+    padding: 0 10px;
+  }
+}
+
+/* Estilos para o overlay do alerta */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para a caixa de alerta */
+.alert-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.alert-title {
+  color: #d32f2f;
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.alert-message {
+  font-size: 16px;
+  font-family: Inter;
+  margin-bottom: 20px;
+}
+
+.alert-button {
+  padding: 8px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+#showAlertButton {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ranking-change {
+  animation: 4s ease-in-out;
+}

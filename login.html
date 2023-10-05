@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/login-responsive.css" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <link rel="stylesheet" href="css/alertBox.css" />
+
+  </head>
+  <body>
+
+    <header>
+      <div class="button-back">
+        <a id="botaoVoltar" href="#">
+          <img src="assets/voltar.png" alt="Botão de voltar" />
+        </a>
+      </div>
+    </header>
+
+    <div class="center">
+      <h1>Bem vindo!</h1>
+      <h3>Entre com seu e-mail e sua senha</h3>
+      <form>
+        <div class="txt_field">
+          <input type="text" id="email_log" required />
+          <label>E-mail</label>
+          <span></span>
+        </div>
+        <div class="txt_field">
+          <div class="senha">
+            <input type="password" id="senha_log" required />
+            <label class="senha">Senha</label>
+            <span></span>
+          </div>
+        </div>
+        <div class="sub">
+          <input type="submit" id="botaoLog" value="login" />
+        </div>
+        <a href="esqueceu-senha.html"><div class="pass">Esqueceu sua senha?</div></a>
+        <div class="signup-link">
+          <a href="cadastrar.html">Ou crie uma nova conta</a>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <!-- Overlay para alertas -->
+      <div id="alertOverlay" class="overlay">
+        <!-- Caixa de alerta -->
+        <div id="alertBox" class="alert-box">
+          <h2 class="alert-title">Atenção</h2>
+          <p class="alert-message">
+            Começou a contagem para você realizar o descarte. Se quiser
+            cancelar, clique novamente no botão.
+          </p>
+          <!-- Botão para cancelar o alerta -->
+          <!--button id="cancelButton" class="alert-button">Cancelar</button-->
+          <!-- Botão para confirmar o alerta -->
+          <button id="confirmButton" class="alert-button">Entendi</button>
+        </div>
+      </div>
+    </footer>
+    
+
+    <!--script src="https://code.jquery.com/jquery-3.6.0.min.js"></script-->
+    <script src="js/page-back.js"></script>
+    <script src="js/log.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cadastrar</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/cadastrar.css" />
+    <link rel="stylesheet" href="css/cadastrar-responsive.css" />
+    <link rel="stylesheet" href="css/alertBox.css" />
+    
+  </head>
+  <body>
+    <header>
+      <div class="button-back">
+        <a id="botaoVoltar" href="#">
+          <img src="assets/voltar.png" alt="Botão de voltar" />
+        </a>
+      </div>
+    </header>
+
+    <div class="center">
+      <h2>Crie</h2>
+      <h2>Sua conta :)</h2>
+      <form action="" id="form_cad">
+        <div class="txt_field">
+          <input type="text" id="email_cad"required />
+          <label>Digite seu email</label>
+          <span></span>
+        </div>
+        <div class="txt_field">
+          <input type="text" id="nome_cad" required />
+          <label>Digite seu nome de usuário</label>
+          <span></span>
+        </div>
+        <div class="txt_field">
+          <div class="senha">
+            <input type="password" id="senha_cad" required />
+            <label class="senha">Digite sua senha</label>
+            <span></span>
+          </div>
+        </div>
+        <div class="sub">
+          <input type="submit" value="criar" id="botaoCad" />
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      <!-- Overlay para alertas -->
+      <div id="alertOverlay" class="overlay">
+        <!-- Caixa de alerta -->
+        <div id="alertBox" class="alert-box">
+          <h2 class="alert-title">Atenção</h2>
+          <p class="alert-message">
+            Começou a contagem para você realizar o descarte. Se quiser
+            cancelar, clique novamente no botão.
+          </p>
+          <!-- Botão para cancelar o alerta -->
+          <!--button id="cancelButton" class="alert-button">Cancelar</button-->
+          <!-- Botão para confirmar o alerta -->
+          <button id="confirmButton" class="alert-button">Entendi</button>
+        </div>
+      </div>
+    </footer>
+
+    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/page-back.js"></script>
+    <script src="js/cad.js" type="text/javascript"> </script>
+
+  </body>
+</html>

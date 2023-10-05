@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Inserir codigo</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/login-responsive.css" />
+  </head>
+  <body>
+    <header>
+      <div class="button-back">
+        <a id="botaoVoltar" href="#">
+          <img src="assets/voltar.png" alt="Botão de voltar" />
+        </a>
+      </div>
+    </header>
+
+    <div class="center">
+      <h1>Achou</h1>
+      <h1>Seu código?</h1>
+      <form action="codigo.php" method="post">
+        <div class="txt_field">
+          <input type="text" id="codigo" name="codigo" required />
+          <label>Digite seu código aqui</label>
+          <span></span>
+        </div>
+        <div class="sub">
+          <input type="submit" value="enviar" name="enviar"/>
+        </div>
+      </form>
+    </div>
+
+    <script src="js/page-back.js"></script>
+  </body>
+</html>
