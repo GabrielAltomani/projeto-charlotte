@@ -8,9 +8,9 @@
         //echo "$nome $email $senha";
 
         $comandoSql="insert into tb_usuario
-            (nome_usuario, email_usuario, senha)
+            (nome_usuario, email_usuario, senha, ativo)
              values 
-             ('$nome', '$email', '$senha');";
+             ('$nome', '$email', '$senha', 1);";
 
              $resultado= $pdo->query($comandoSql);
         

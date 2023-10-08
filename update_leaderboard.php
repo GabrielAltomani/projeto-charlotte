@@ -3,11 +3,12 @@
     require_once "db_connection.php";
 
     // Consulta SQL
-    $sql = "SELECT U.NOME_USUARIO, COUNT(L.ID_LIXO) AS PONTUACAO
-            FROM TB_USUARIO U
-            INNER JOIN TB_LIXO_DESCARTE L ON U.ID_USUARIO = L.COD_USUARIO
-            GROUP BY U.ID_USUARIO
-            ORDER BY PONTUACAO DESC";
+    $sql = "select u.nome_usuario, count(l.id_lixo) as pontuacao
+            from tb_usuario u
+            inner join tb_lixo_descarte l on u.id_usuario = l.cod_usuario
+            and u.ativo=1
+            group by u.id_usuario
+            order by pontuacao desc";
 
     // Executando a consulta SQL e armazenando o resultado na variável $result
     $result = $pdo->query($sql);
@@ -18,8 +19,8 @@
         $counter = 0;
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {       // Loop para percorrer cada linha de resultado
             $counter++; 
-            $nome = $row["NOME_USUARIO"]; // Obtendo o nome do usuário da linha atual
-            $pontuacao = $row["PONTUACAO"]; // Obtendo a pontuação do usuário da linha atual
+            $nome = $row["nome_usuario"]; // Obtendo o nome do usuário da linha atual
+            $pontuacao = $row["pontuacao"]; // Obtendo a pontuação do usuário da linha atual
 
             $extraClass = '';
             if ($counter == 1) {

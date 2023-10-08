@@ -10,7 +10,7 @@
 	  
     /*3- criando o comando sql para alteracao do registro */
 	$comandoSql="update tb_usuario set 
-	nome_usuario='$nome', email_usuario='$email' where id_usuario='$id'";
+	nome_usuario='$nome' where id_usuario='$id' and ativo=1";
 	
 	/*4- executando o comando sql */
 	$resultado= $pdo->query($comandoSql);

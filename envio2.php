@@ -63,13 +63,13 @@ if ($stmt_id->execute()) {
             
                 //pdotent
                 $mail->isHTML(true);                                  //Set email format to HTML
-                $mail->Subject = 'Recuperação de senha';
+                $mail->Subject = 'Redefinição de senha';
                 $mail->Body = '
                             <!DOCTYPE html>
                             <html>
                             <head>
                                 <meta charset="UTF-8">
-                                <title>Recuperação de Senha</title>
+                                <title>Redefinição de Senha</title>
                                 <style>
                                     body {
                                         font-family: Arial, sans-serif;
@@ -107,15 +107,15 @@ if ($stmt_id->execute()) {
                             <body>
                                 <div class="container">
                                     <div class="header">
-                                        <h2>Recuperação de Senha</h2>
+                                        <h2>Redefinição de Senha</h2>
                                     </div>
                                     <div class="content">
                                         <p>Olá,</p>
-                                        <p>Você está recebendo este e-mail porque solicitou a recuperação de senha da sua conta.</p>
-                                        <p>Para redefinir sua senha, utilize o seguinte código:</p>
+                                        <p>Você está recebendo este e-mail porque solicitou a redefinição de senha da sua conta.</p>
+                                        <p>Para realizar esta ação, utilize o seguinte código:</p>
                                         <p class="code">'.$token.'</p>
                                         <p>Este código é válido por 15 minutos a partir do momento do envio deste e-mail.</p>
-                                        <p>Se você não solicitou a recuperação de senha, pode ignorar este e-mail com segurança.</p>
+                                        <p>Se você não solicitou a redefinição de senha, pode ignorar este e-mail com segurança.</p>
                                     </div>
                                     <div class="footer">
                                         <p>Este é um e-mail automático. Por favor, não responda a este e-mail.</p>
@@ -125,7 +125,7 @@ if ($stmt_id->execute()) {
                             </html>
                             
                         ';
-                $mail->AltBody = 'Recuperação de senha';
+                $mail->AltBody = 'Redefinição de senha';
         
                 if($mail->send()) {
                     

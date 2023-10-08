@@ -47,7 +47,7 @@
         </div>
         <div class="txt_field">
           <div class="senha">
-            <input type="password" id="logPassword" value="<?php echo $senha; ?>" required />
+            <input type="password" id="logPassword" value="<?php echo $senha; ?>" readonly />
             <label>Senha</label>
             <div class="aye-area">
               <div class="aye-box" onclick="myLogPass()">
@@ -57,6 +57,8 @@
             </div>
           </div>
         </div>
+        <br>
+        <a href="redef_senha.html"><div class="pass">Redefinir sua senha?</div></a>
         <div class="but">
           <div class="sub">
             <input type="submit" value="SALVAR" id="botao_salvar"/>

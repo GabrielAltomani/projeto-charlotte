@@ -6,7 +6,7 @@
         //echo "valor do email no pesqUsu $email";
 
         $comandoSql="select id_usuario, email_usuario, nome_usuario, senha from tb_usuario where 
-                     email_usuario='$email'";
+                     email_usuario='$email' and ativo=1";
 
         $resultado= $pdo->query($comandoSql);
         

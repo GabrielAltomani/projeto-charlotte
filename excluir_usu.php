@@ -7,7 +7,7 @@
     $id = $_SESSION["id"];
 	  
     /*3- criando o comando sql para alteracao do registro */
-	$comandoSql="delete from tb_usuario where id_usuario='$id'";
+	$comandoSql="update tb_usuario set ativo=0 where id_usuario=$id";
 	
 	/*4- executando o comando sql */
 	$resultado= $pdo->query($comandoSql);

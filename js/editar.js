@@ -26,11 +26,10 @@
         } else { //se não estiverem, :
 
             let dadosEdt = {
-                ec: email.value,
                 nc: nome.value
             };
 
-            //fazendo uma requisição post para a edição dos dados 
+            //fazendo uma requisição post para a edição  
             //no banco de dados 
             fetch('edt_usu.php', {
             method: 'POST',
@@ -54,7 +53,7 @@
         }// fim do else de verificção de campo vazio
         }); //fim do click do botão de editar
 
-        //define a função do cliclk do link sair
+        //define a função do click do link sair
         document.getElementById("sair_link").addEventListener("click", function(evento) {
             evento.preventDefault();
     
@@ -107,14 +106,5 @@
             document.getElementById("alertOverlay2").style.display = "none"; // Esconde o overlay de alerta
         });
         
-
-        
-
-        
-
-        senha.addEventListener("blur", function(){
-            alert("campo senha saiu do foco");
-        });
-
         
    // });

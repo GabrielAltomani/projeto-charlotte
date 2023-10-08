@@ -20,9 +20,9 @@
 
           try {
             // Consulta SQL para selecionar os dados da tabela
-            $sql = "SELECT ID_LIXEIRA, QUANTIDADE, CHEIO, DATA_CHEIO 
-            FROM TB_LIXEIRA
-            ORDER BY ID_LIXEIRA DESC";
+            $sql = "select id_lixeira, quantidade, cheio, data_cheio 
+            from tb_lixeira
+            order by id_lixeira desc";
 
             // Executa a consulta usando o objeto $pdo
             $result = $pdo->query($sql);
