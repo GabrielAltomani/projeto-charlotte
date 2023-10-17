@@ -29,31 +29,48 @@ document.getElementById("cancelButton").addEventListener("click", function() {
 
 // Event listener para o botão "Entendi" no alerta
 document.getElementById("confirmButton").addEventListener("click", function() {
-    document.getElementById("alertOverlay").style.display = "none"; // Esconde o overlay de alerta
+  document.getElementById("alertOverlay").style.display = "none"; // Esconde o overlay de alerta
 
-    var botao = document.getElementById("descarte");
-    botao.classList.add("clicked"); // Adiciona a classe "clicked" ao botão
-    startCountdown(botao, 40000, userData.id); // Inicia o countdown 
+  // Verifica se userData.id está definido e não é nulo ou vazio
+  if (userData.id) {
+      var botao = document.getElementById("descarte");
+      botao.classList.add("clicked"); // Adiciona a classe "clicked" ao botão
+      startCountdown(botao, 40000); // Inicia o countdown 
 
-    isCountdownActive = true; // Atualiza o estado do countdown
-    // Faz uma requisição AJAX para enviar o ID do usuário para api.php
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "api.php", true);
-    xhr.setRequestHeader("Content-Type", "application/json"); // Define o tipo de conteúdo como JSON
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Callback após a resposta da API (se necessário)
-            console.log(xhr.responseText);
-        }
-    };
+      isCountdownActive = true; // Atualiza o estado do countdown
 
-    // Envia o ID do usuário como parte do corpo da requisição em formato JSON
-    var jsonData = JSON.stringify({ idUsuario: userData.id });
-    xhr.send(jsonData);
+      // Faz uma requisição AJAX para api.php enviando apenas o idUsuario
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "api.php", true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // Define o tipo de conteúdo como formulário
+      console.log("idUsuario a ser enviado: " + userData.id);
 
-    console.log(userData.id); // Verifica se userData.id está definido corretamente
-    console.log('API request sent'); // Verifica se a requisição AJAX está sendo enviada
+      // Crie uma string no formato 'chave=valor' para o envio do idUsuario
+      var data = 'idUsuario=' + encodeURIComponent(userData.id);
+
+      xhr.onreadystatechange = function() {
+          if (xhr.readyState == 4) {
+              if (xhr.status == 200) {
+                  // Sucesso na requisição, você pode fazer algo com a resposta, se necessário
+                  console.log(xhr.responseText);
+              } else {
+                  // Erro na requisição, exiba uma mensagem de erro ou trate conforme necessário
+                  console.error("Erro na requisição AJAX: " + xhr.status);
+              }
+          }
+      };
+
+      // Envia a string de dados
+      xhr.send(data);
+  } else {
+      console.log("ID do usuário não está definido corretamente.");
+  }
 });
+
+
+
+
+
 
 // Função para iniciar o countdown
 function startCountdown(button, duration, idUsuario) {

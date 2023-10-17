@@ -8,13 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Receba os dados JSON do corpo da solicitação
     $jsonData = file_get_contents('php://input');
     $data = json_decode($jsonData, true);
-    error_log(json_encode($_POST));
+
     // Verifique se o campo 'contador' está presente no JSON recebido
     if (isset($data['contador'])) {
         // Receba o contador do corpo da solicitação JSON
         $contador = $data['contador'];
-        $idUsuario = isset($data['idUsuario']) ? $data['idUsuario'] : null;
-
+        $idUsuario = isset($_POST['idUsuario']) ? $_POST['idUsuario'] : null;
         
         // Execute uma consulta SQL para atualizar a quantidade na tabela tb_lixeira
         $updateSql = "UPDATE tb_lixeira SET quantidade = (:contador) WHERE id_lixeira = '1'";
