@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/editar.css" />
+    <link rel="stylesheet" href="css/editar-responsive.css">
     <link rel="stylesheet" href="css/alertBox.css" />
   </head>
   <body>
@@ -23,56 +24,56 @@
       </div>
     </header>
 
-    <div class="center">
-      <form action="">
-
-      <?php 
-        require_once "db_connection.php";
-        session_start();
-
-        $id=$_SESSION["id"];
-        $nome=$_SESSION["nome"];
-        $email=$_SESSION["email"];
-        $senha=$_SESSION["senha"];
-      ?>
-
-
-        <div class="txt_field">
-          <input type="text" id="inputNome" value="<?php echo $nome; ?>" required />
-          <label>Nome de usuário</label>
-        </div>
-        <div class="txt_field">
-          <input type="email" id="inputEmail" value="<?php echo $email; ?>" readonly />
-          <label>Email</label>
-        </div>
-        <div class="txt_field">
-          <div class="senha">
-            <input type="password" id="logPassword" value="<?php echo $senha; ?>" readonly />
-            <label>Senha</label>
-            <div class="aye-area">
-              <div class="aye-box" onclick="myLogPass()">
-                <i class="fa-regular fa-aye" id="aye"><img src="assets/aye.png" alt=""></i>
-                <i class="fa-regular fa-aye-slash" id="aye-slash"><img src="assets/aye-slash.png" alt=""></i>
+    <div class="container">
+      <div class="center">
+        <form action="">
+          <?php 
+            require_once "db_connection.php";
+            session_start();
+    
+            $id=$_SESSION["id"];
+            $nome=$_SESSION["nome"];
+            $email=$_SESSION["email"];
+            $senha=$_SESSION["senha"];
+          ?>
+          <div class="txt_field">
+            <input type="text" id="inputNome" value="<?php echo $nome; ?>" required />
+            <label>Nome de usuário</label>
+          </div>
+          <div class="txt_field">
+            <input type="email" id="inputEmail" value="<?php echo $email; ?>" readonly />
+            <label>Email</label>
+          </div>
+          <div class="txt_field">
+            <div class="senha">
+              <input type="password" id="logPassword" value="<?php echo $senha; ?>" readonly />
+              <label>Senha</label>
+              <div class="aye-area">
+                <div class="aye-box" onclick="myLogPass()">
+                  <i class="fa-regular fa-aye" id="aye"><img src="assets/aye.png" alt=""></i>
+                  <i class="fa-regular fa-aye-slash" id="aye-slash"><img src="assets/aye-slash.png" alt=""></i>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <br>
-        <a href="redef_senha.html"><div class="pass">Redefinir sua senha?</div></a>
-        <div class="but">
-          <div class="sub">
-            <input type="submit" value="SALVAR" id="botao_salvar"/>
-          </div>
+          <br>
           
-          <div class="signup-link" id="sair_link">
-            <a href="login.html"><input type="button" value="SAIR"></a>
+          <a href="redef_senha.html"><div class="pass">Redefinir sua senha?</div></a>
+          <div class="but">
+            <div class="sub">
+              <input type="submit" value="SALVAR" id="botao_salvar"/>
+            </div>
+            
+            <div class="signup-link" id="sair_link">
+              <a href="login.html"><input type="button" value="SAIR"></a>
+            </div>
+            
+            <div class="signup-link" id="excluir_link">
+              <a href="login.html"><input type="button" value="EXCLUIR CONTA"></a>
+            </div>
           </div>
-          
-          <div class="signup-link" id="excluir_link">
-            <a href="login.html"><input type="button" value="EXCLUIR CONTA"></a>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
 
     <footer>

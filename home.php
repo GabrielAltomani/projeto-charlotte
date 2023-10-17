@@ -8,6 +8,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/home-responsive.css">
 </head>
 
 <body>
@@ -99,45 +100,58 @@
     </footer>
 
     <?php 
+        // Inclua o arquivo de conexão com o banco de dados
         require_once "db_connection.php";
 
         // Verifique se o id foi passado via GET
         if(isset($_GET["id"])) {
             // Obtém o id da URL de forma segura
             $id = filter_var($_GET["id"], FILTER_SANITIZE_NUMBER_INT);
-        
+            
             // Prepara a consulta SQL usando um Prepared Statement
             $stmt = $pdo->prepare("SELECT nome_usuario, email_usuario, senha FROM tb_usuario WHERE id_usuario = :id");
-        
+            
             // Atribui o valor ao parâmetro na consulta
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        
+            
             // Executa a consulta
-            $stmt->execute();
-        
-            // Verifica se encontrou algum resultado
-            if($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
-                $nome = $linha["nome_usuario"];
-                $email = $linha["email_usuario"];
-                $senha = $linha["senha"];
-        
-                // Inicia a sessão
-                session_start();
-        
-                // Define as variáveis de sessão
-                $_SESSION["id"] = $id;
-                $_SESSION["nome"] = $nome;
-                $_SESSION["email"] = $email;
-                $_SESSION["senha"] = $senha;
+            if ($stmt->execute()) {
+                // Verifica se encontrou algum resultado
+                if($linha = $stmt->fetch(PDO::FETCH_ASSOC)){
+                    // Inicia a sessão
+                    session_start();
+            
+                    // Define as variáveis de sessão
+                    $_SESSION["id"] = $id;
+                    $_SESSION["nome"] = $linha["nome_usuario"];
+                    $_SESSION["email"] = $linha["email_usuario"];
+                    $_SESSION["senha"] = $linha["senha"];
+
+                    $userData = array(
+                        'id' => $_SESSION["id"],
+                        'nome' => $_SESSION["nome"],
+                        'email' => $_SESSION["email"]
+                    );
+                
+                    // Converte o array de dados do usuário em JSON
+                    $userDataJSON = json_encode($userData);
+
+                    // Inclui o script JavaScript para definir a variável userData
+                    echo "<script>var userData = $userDataJSON;</script>";
+                } else {
+                    // Usuário não encontrado, redirecione ou mostre uma mensagem de erro
+                    exit();
+                }
             } else {
-                // Usuário não encontrado, redirecione ou mostre uma mensagem de erro
+                // Erro ao executar a consulta, redirecione ou mostre uma mensagem de erro
+                exit();
             }
         } else {
             // id não especificado na URL, redirecione ou mostre uma mensagem de erro
+            exit();
         }
-        
+                
     ?>
-
     <script src="js/number-rank.js"></script>
     <script src="js/descarte.js"></script>
     <script src="js/update-leaderboard.js"></script>

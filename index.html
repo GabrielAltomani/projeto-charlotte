@@ -8,12 +8,22 @@
 
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/index-responsive.css">
   </head>
   <body>
     <img class="image" src="assets/Union.png" alt="elipse detalhe background" />
 
-    <h1 class="title">Vamos Começar</h1>
+    <div class="title">
+      <h1">Vamos</h1><br>
+      <h1">Começar</h1>
+    </div>
 
     <a href="login.html"><button>Entrar</button></a>
   </body>
+
+  <script>
+    window.onload = function () {
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+  </script>
 </html>

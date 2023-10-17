@@ -32,12 +32,12 @@
               // Loop através dos resultados e exibe-os
               while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
               echo "<ul>";
-              echo "<li>ID: " . $row["ID_LIXEIRA"] . "</li>";
-              echo "<li>Quantidade: " . $row["QUANTIDADE"] . "</li>";
-              echo "<li>Cheio: " . ($row["CHEIO"] ? "Sim" : "Não") . "</li>";
+              echo "<li>ID: " . $row["id_lixeira"] . "</li>";
+              echo "<li>Quantidade: " . $row["quantidade"] . "</li>";
+              echo "<li>Cheio: " . ($row["cheio"] ? "Sim" : "Não") . "</li>";
 
               // Formata a data para o padrão brasileiro
-              $dataFormatada = date("d/m/Y    H:i:s", strtotime($row["DATA_CHEIO"]));
+              $dataFormatada = date("d/m/Y    H:i:s", strtotime($row["data_cheio"]));
               echo "<li>Data: " . $dataFormatada . "</li>";
 
               echo "</ul>";

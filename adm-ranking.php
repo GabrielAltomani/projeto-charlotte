@@ -35,8 +35,8 @@
                 $counter = 0;
                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {       // Loop para percorrer cada linha de resultado
                     $counter++; 
-                    $nome = $row["NOME_USUARIO"]; // Obtendo o nome do usuário da linha atual
-                    $pontuacao = $row["PONTUACAO"]; // Obtendo a pontuação do usuário da linha atual
+                    $nome = $row["nome_usuario"]; // Obtendo o nome do usuário da linha atual
+                    $pontuacao = $row["pontuacao"]; // Obtendo a pontuação do usuário da linha atual
 
                     $extraClass = '';
                     if ($counter == 1) {

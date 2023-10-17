@@ -60,7 +60,7 @@
                                document.getElementById("alertOverlay").style.display = "flex";
                                
                            } else {
-                               window.location.replace("adm-ranking.html?id="+pesqAdm);
+                               window.location.replace("adm-ranking.php?id="+pesqAdm);
                            }
                        })
                    } else{

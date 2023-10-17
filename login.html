@@ -24,30 +24,32 @@
       </div>
     </header>
 
-    <div class="center">
-      <h1>Bem vindo!</h1>
-      <h3>Entre com seu e-mail e sua senha</h3>
-      <form>
-        <div class="txt_field">
-          <input type="text" id="email_log" required />
-          <label>E-mail</label>
-          <span></span>
-        </div>
-        <div class="txt_field">
-          <div class="senha">
-            <input type="password" id="senha_log" required />
-            <label class="senha">Senha</label>
+    <div class="container">
+      <div class="center">
+        <h1>Bem vindo!</h1>
+        <h3>Entre com seu e-mail e sua senha</h3>
+        <form action="pesqAdm.php">
+          <div class="txt_field">
+            <input type="text" name="ep" id="email_log" required />
+            <label>E-mail</label>
             <span></span>
           </div>
-        </div>
-        <div class="sub">
-          <input type="submit" id="botaoLog" value="login" />
-        </div>
-        <a href="esqueceu-senha.html"><div class="pass">Esqueceu sua senha?</div></a>
-        <div class="signup-link">
-          <a href="cadastrar.html">Ou crie uma nova conta</a>
-        </div>
-      </form>
+          <div class="txt_field">
+            <div class="senha">
+              <input type="password" name="sc" id="senha_log" required />
+              <label class="senha">Senha</label>
+              <span></span>
+            </div>
+          </div>
+          <div class="sub">
+            <input type="submit" id="botaoLog" value="login" />
+          </div>
+          <a href="esqueceu-senha.html"><div class="pass">Esqueceu sua senha?</div></a>
+          <div class="signup-link">
+            <a href="cadastrar.html">Ou crie uma nova conta</a>
+          </div>
+        </form>
+      </div>
     </div>
 
     <footer>

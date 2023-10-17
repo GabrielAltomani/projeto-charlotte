@@ -24,12 +24,17 @@ body {
   margin: 10px;
 }
 
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
 .center {
-  position: absolute;
-  top: 52%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 350px;
+  text-align: center;
+  width: 90%;
 }
 
 .center h1 {

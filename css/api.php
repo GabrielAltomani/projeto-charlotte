@@ -1,26 +1,27 @@
 <?php
-session_start();
 header('Content-Type: application/json');
 require_once 'db_connection.php';
+session_start();
 
 // Verifique se a solicitação é uma solicitação POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Receba os dados JSON do corpo da solicitação
     $jsonData = file_get_contents('php://input');
     $data = json_decode($jsonData, true);
-    error_log(json_encode($_POST));
+
     // Verifique se o campo 'contador' está presente no JSON recebido
     if (isset($data['contador'])) {
-        // Receba o contador do corpo da solicitação JSON
         $contador = $data['contador'];
-        $idUsuario = isset($data['idUsuario']) ? $data['idUsuario'] : null;
-
         
-        // Execute uma consulta SQL para atualizar a quantidade na tabela tb_lixeira
-        $updateSql = "UPDATE tb_lixeira SET quantidade = (:contador) WHERE id_lixeira = '1'";
-        // Por exemplo, inserir o ID do usuário na tabela tb_lixo_descarte
-        $insertSql = "INSERT INTO tb_lixo_descarte (cod_usuario, data_hora) VALUES (:idUsuario, current_timestamp())";
-    
+        // Obtenha o ID do usuário da variável de sessão
+        $idUsuario = $_SESSION["id"];
+
+        var_dump($contador, $idUsuario);
+
+        // Execute uma consulta SQL para inserir o contador no banco de dados
+        $updateSql = "UPDATE tb_lixeira SET quantidade = (:contador) WHERE id_lixeira='1'";
+        $insertSql = "INSERT INTO tb_lixo_descarte (COD_USUARIO, DATA_HORA) VALUES (:idUsuario, current_timestamp())";
+
         try {
             $pdo->beginTransaction();
 

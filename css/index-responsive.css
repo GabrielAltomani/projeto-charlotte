@@ -1,0 +1,62 @@
+/* Media Query para telas de desktop */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    background-color: #f7f7f7; /* Cor de fundo para desktop */
+  }
+
+  .image {
+    display: none;
+  }
+
+  .container {
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .title {
+    font-size: 48px;
+    color: var(--tx-color-1, #000);
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    background: var(--tx-color-1, #000);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #333; /* Ou outra cor de sua escolha */
+    }
+  }
+
+  /* Media Query para celulares menores */
+  @media (max-width: 767px) {
+    .image {
+      width: 100%;
+      max-width: 397px;
+      margin-left: 0;
+    }
+
+    .title {
+      font-size: 36px; /* Ajuste conforme necessário */
+      padding-bottom: 10px; /* Ajuste conforme necessário */
+    }
+
+    button {
+      width: 70%;
+      font-size: 18px; /* Ajuste conforme necessário */
+    }
+  }
+}
