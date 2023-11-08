@@ -154,6 +154,6 @@
     ?>
     <script src="js/number-rank.js"></script>
     <script src="js/descarte.js"></script>
-    <script src="js/update-leaderboard.js"></script>
+    <!-- <script src="js/update-leaderboard.js"></script> -->
 </body>
 </html>

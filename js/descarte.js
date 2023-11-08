@@ -30,47 +30,22 @@ document.getElementById("cancelButton").addEventListener("click", function() {
 // Event listener para o botão "Entendi" no alerta
 document.getElementById("confirmButton").addEventListener("click", function() {
   document.getElementById("alertOverlay").style.display = "none"; // Esconde o overlay de alerta
-
-  // Verifica se userData.id está definido e não é nulo ou vazio
-  if (userData.id) {
-      var botao = document.getElementById("descarte");
-      botao.classList.add("clicked"); // Adiciona a classe "clicked" ao botão
-      startCountdown(botao, 40000); // Inicia o countdown 
-
-      isCountdownActive = true; // Atualiza o estado do countdown
-
-      // Faz uma requisição AJAX para api.php enviando apenas o idUsuario
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "api.php", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // Define o tipo de conteúdo como formulário
-      console.log("idUsuario a ser enviado: " + userData.id);
-
-      // Crie uma string no formato 'chave=valor' para o envio do idUsuario
-      var data = 'idUsuario=' + encodeURIComponent(userData.id);
-
-      xhr.onreadystatechange = function() {
-          if (xhr.readyState == 4) {
-              if (xhr.status == 200) {
-                  // Sucesso na requisição, você pode fazer algo com a resposta, se necessário
-                  console.log(xhr.responseText);
-              } else {
-                  // Erro na requisição, exiba uma mensagem de erro ou trate conforme necessário
-                  console.error("Erro na requisição AJAX: " + xhr.status);
-              }
-          }
-      };
-
-      // Envia a string de dados
-      xhr.send(data);
-  } else {
-      console.log("ID do usuário não está definido corretamente.");
-  }
+  var botao = document.getElementById("descarte");
+  botao.classList.add("clicked");
+  startCountdown(botao, 40000);
+  isCountdownActive = true;
+  api();
 });
 
-
-
-
-
+async function api() {
+  console.log(userData.id);
+  // Faz uma requisição GET para a API passando o ID do usuário na URL
+  const response = await fetch(`/charlotte-app/api.js?id_usuario=${userData.id}`, {
+    method: 'GET'
+    })
+  const data = await response.json();
+  console.log({data})
+}
 
 // Função para iniciar o countdown
 function startCountdown(button, duration, idUsuario) {
